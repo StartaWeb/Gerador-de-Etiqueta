@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Etiquetas Ebenezer</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<img class="EbenezerTitulo" src="EbenezerTitulo.png" alt="EbenezerTitulo">
+<div class="container">
+  <form class="formulario">
+    <div>
+      <label>Cliente: <input type="text" id="cliente"></label>
+    </div>
+    <div>
+      <label>Orçamento: <input type="text" id="orcamento"></label>
+    </div>
+    <div>
+      <label>Quantidade de etiquetas: <input type="number" id="quantidade"></label>
+    </div>
+    <div>
+      <label>Data: <input type="date" id="data"></label>
+    </div>
+    <div>
+      <label>Representante: <input type="text" id="representante"></label>
+    </div>
+    <button type="button" onclick="gerar()">Gerar</button>
+    <button type="button" onclick="window.print()">Imprimir</button>
+  </form>
+  <div id="etiquetas"></div>
+</div>
+<script>
+  function gerar() {
+    const cliente = document.getElementById("cliente").value;
+    const orc = document.getElementById("orcamento").value;
+    const quant = parseInt(document.getElementById("quantidade").value);
+    const data = document.getElementById("data").value;
+    const representante = document.getElementById("representante").value;
+    const container = document.getElementById("etiquetas");
+    container.innerHTML = "";
+    for (let i = 1; i <= quant; i++) {
+      const etiqueta = document.createElement("div");
+      etiqueta.className = "etiqueta";
+      etiqueta.innerHTML = `
+        <img src="EbenezerTitulo.png" class="logo-etiqueta" alt="Logo Ebenezer">
+        <div class="conteudo">
+          <p>Cliente: ${cliente}</p>
+          <p>Orç: ${orc}</p>
+          <p>Quant: ${i} de ${quant}</p>
+          <p>Data: ${data}</p>
+          <p>Representante: ${representante}</p>
+        </div>
+      `;
+      container.appendChild(etiqueta);
+    }
+  }
+</script>
+</body>
+</html>

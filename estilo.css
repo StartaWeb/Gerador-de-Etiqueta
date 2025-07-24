@@ -1,0 +1,119 @@
+:root {
+  --fundo: #d0e8f2;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: #e0e0e0; /* fundo cinza */
+  font-family: 'Segoe UI', sans-serif;
+}
+.EbenezerTitulo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.container {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  padding: 32px;
+  max-width: 700px;
+  margin: 32px auto;
+}
+
+.formulario {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  border-radius: 12px;
+  background: #f7f7f7;
+  padding: 24px;
+}
+.logo-topo {
+  display: block;
+  margin: 0 auto 24px auto;
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+  opacity: 1;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  font-size: 18px;
+  margin-bottom: 12px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.formulario {
+  margin-bottom: 20px;
+}
+
+#etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10mm;
+  justify-content: center;
+}
+
+.etiqueta {
+  box-shadow: none;
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+  width: 180mm;
+  height: 125mm;
+  align-items: flex-start;
+  page-break-inside: avoid;
+}
+
+.logo-etiqueta {
+  width: 150mm;
+  height: 40mm;
+  object-fit: contain;
+  margin-bottom: 4mm;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.conteudo {
+  width: 100%;
+  text-align: left;
+  margin: 0 auto
+}
+@media print {
+  .EbenezerTitulo {
+    display: none;
+  }
+
+@media print {
+  body {
+    background: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .formulario {
+    display: none;
+  }
+  #etiquetas {
+    gap: 4mm;
+    justify-content: center;
+    page-break-inside: avoid;
+  }
+  .etiqueta {
+    box-shadow: none;
+    margin: 0;
+        align-items: flex-start;
+  }
+}
